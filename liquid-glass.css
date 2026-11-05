@@ -1,0 +1,62 @@
+/* Optical edge treatment adapted from Liquid Glass Studio. See notices. */
+:root{--bg:#edf3f0;--line:#dfe8e2;--glass-border:rgba(255,255,255,.8);--glass-shadow:0 5px 18px #2748380c,0 1px 3px #2445320a}
+body{background:radial-gradient(ellipse at 14% 10%,#dbe9df 0,transparent 38%),radial-gradient(ellipse at 80% 2%,#dce9ef 0,transparent 38%),radial-gradient(ellipse at 85% 75%,#e5eee3 0,transparent 45%),#f1f5f2;background-attachment:fixed}
+.glass-filter-definitions{position:fixed;left:0;top:0;width:0;height:0;pointer-events:none;overflow:hidden}
+.sidebar{background:linear-gradient(145deg,#e8f0e8b3,#edf3f0ad);backdrop-filter:blur(30px) saturate(135%);-webkit-backdrop-filter:blur(30px) saturate(135%);border-right:1px solid #ffffffa6;box-shadow:7px 0 25px #345b3d03}
+.topbar{background:linear-gradient(120deg,#ffffff70,#f4faf57a);backdrop-filter:blur(22px) saturate(140%);-webkit-backdrop-filter:blur(22px) saturate(140%);box-shadow:0 1px 0 #ffffffa6,0 7px 22px #385d4304}
+.liquid-surface{position:relative;isolation:isolate;--glare-x:28%;--glare-y:0%;border:1px solid #ffffffa1;box-shadow:var(--glass-shadow);background:transparent}
+.liquid-surface::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;border-radius:inherit;background:linear-gradient(145deg,#ffffff8f 0%,#ffffff2b 46%,#faffff61 100%);backdrop-filter:blur(12px) saturate(145%);-webkit-backdrop-filter:blur(12px) saturate(145%);box-shadow:inset 0 1.5px 1px #ffffffed,inset 1px 0 1px #ffffffad,inset 0 -1px 1.5px #476d551c,inset -1px 0 2px #5e78880d}
+html[data-glass-renderer=svg-refraction] .liquid-surface::before{backdrop-filter:var(--liquid-filter) saturate(135%)}
+.liquid-surface::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:-1;border-radius:inherit;background:radial-gradient(ellipse at var(--glare-x) var(--glare-y),#ffffffa6 0%,#ffffff24 32%,transparent 65%);opacity:.6;border:1px solid transparent;border-top-color:#fff9;border-bottom-color:#325e4712}
+.liquid-surface:hover{box-shadow:0 6px 18px #2c523f14,0 1px 3px #2043300c}
+.liquid-surface:active{box-shadow:0 1px 4px #2c523f12}
+nav a.active.liquid-surface{background:transparent;box-shadow:var(--glass-shadow);border-radius:12px;color:#224f3c;border-color:#fff9}
+.search-input-wrap.liquid-surface{border-radius:14px;background:transparent;border-color:#fff9;box-shadow:inset 0 0 0 .5px #ffffff80,0 3px 12px #31534308}
+.search-input-wrap:focus-within{box-shadow:0 0 0 3px #39785615;border-color:#86ad98}
+.search-input-wrap input{color:#263e31}
+.search-input-wrap input::placeholder{color:#5f7669}
+.segments{background:#dfe9e1b3;border:1px solid #ffffff6b;border-radius:13px;padding:4px;box-shadow:inset 0 1px 3px #3a5d4510}
+.segments button{border-radius:9px}
+.segments button.selected.liquid-surface{background:transparent;border-color:#ffffffa8;box-shadow:0 2px 5px #30513a12;color:#254f3c}
+.primary.liquid-surface{background:linear-gradient(135deg,#296950,#184c38);border-color:#467d65;box-shadow:0 5px 12px #244e3b21,0 1px 2px #284b3212;color:white;border-radius:12px}
+.primary.liquid-surface::before{background:linear-gradient(155deg,#b3e1c63d,transparent 60%,#d7f5e819);box-shadow:inset 0 1px 1px #e8fffaa1,inset 1px 0 1px #b4e5c454,inset 0 -1px 1px #153b3c66}
+.primary.liquid-surface::after{background:radial-gradient(ellipse at var(--glare-x) var(--glare-y),#e2ffef66,transparent 65%);opacity:.55}
+.primary.liquid-surface:hover{background:linear-gradient(135deg,#245c45,#164532)}
+.calendar,.panel{background:#fffffff0;border-color:#fffffff0;box-shadow:0 8px 28px #31533b08,0 1px 3px #31533b08;border-radius:17px}
+.cal-toolbar{background:linear-gradient(120deg,#fbfefbd9,#f6faf8c9);border-bottom-color:#e4ece6}
+.week-header{background:#fcfefd}.day-column{background-color:#ffffffc4}
+.filterbar select{background:#ffffffab;border-color:#ffffffd1;box-shadow:inset 0 1px 1px white,0 2px 7px #34503b06;border-radius:10px}
+.controls button{border:1px solid #e4ece5;background:#f8fcf9;box-shadow:inset 0 1px 0 #fff;border-radius:8px}
+.task-card{background:#ffffffdc;border:1px solid #fff;box-shadow:0 5px 15px #32513b07}
+.notice{background:#e4eee6b8;border:1px solid #fafffac2}
+.search-results{background:#fafff9f5;backdrop-filter:blur(22px);border:1px solid #fff;box-shadow:0 14px 40px #244d371a}
+dialog{background:#f8fff8ed;backdrop-filter:blur(24px) saturate(125%);border:1px solid #ffffffeb;box-shadow:0 25px 90px #213d3329,inset 0 1px 1px #fff}
+dialog::backdrop{background:#233b323d;backdrop-filter:blur(5px)}
+.assistant-page{background:radial-gradient(ellipse at 15% 30%,#dcebdc,transparent 50%),radial-gradient(ellipse at 85% 15%,#dbe9ee,transparent 55%),#f1f5f1}
+.phone{background:#e9f1e8a8;border:1px solid #ffffffeb;box-shadow:0 22px 65px #34533f17,inset 0 1px 1px white;backdrop-filter:blur(20px);border-radius:28px}
+.phone-top.liquid-surface{border-radius:26px 26px 0 0;box-shadow:0 1px 0 #dce8dc99;background:#ffffff61}
+.chat-compose{background:#fbfff9c4}.bubble{background:#ffffffeb}.bubble.out{background:#d4e8d6e8}
+.back-link.liquid-surface{background:transparent;border-radius:12px}
+@supports not (backdrop-filter:blur(1px)){.sidebar,.topbar{background:#eef4ef}.liquid-surface::before{background:#f7fbf7}.primary.liquid-surface::before{background:linear-gradient(135deg,#ffffff18,transparent)}.search-results,dialog{background:#fafffa}}
+@media(max-width:850px){.sidebar{border-right:0;border-bottom:1px solid #ffffffbd}.phone-top.liquid-surface{border-radius:22px 22px 0 0}}
+@media(prefers-reduced-transparency:reduce),(prefers-contrast:more){body,.assistant-page{background:#f3f6f3}.sidebar,.topbar{background:#f0f5f0;backdrop-filter:none;-webkit-backdrop-filter:none}.liquid-surface::before{background:#f7fbf7;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}.liquid-surface::after{display:none}.primary.liquid-surface{background:#22573f;color:white}.primary.liquid-surface::before{background:transparent}.calendar,.panel,.task-card,.phone,.search-results,dialog{background:#fff;backdrop-filter:none}.phone-top.liquid-surface{background:#f7fbf7}.filterbar select{background:#fff}.notice{background:#e7efe8}}
+@media(prefers-contrast:more){.liquid-surface,.calendar,.panel,.task-card{border-color:#8da393;box-shadow:none}.search-input-wrap input::placeholder{color:#455e4c}}
+@media(prefers-reduced-motion:reduce){.liquid-surface::after{background:linear-gradient(145deg,#ffffff40,transparent 65%)}.liquid-surface:active{transform:none}}
+
+/* Focused refinements: quieter action and one clear metrics panel. */
+.sidebar #nav{margin-top:38px}
+[data-action="create"]{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:42px;padding:0 18px;border-radius:11px;border:1px solid #2c624c;background:#28634f;color:#fff;font-size:13px;font-weight:600;line-height:1.2;white-space:nowrap;box-shadow:0 3px 9px #254d3617;flex-shrink:0}
+[data-action="create"] svg{width:16px;height:16px;flex-shrink:0}
+[data-action="create"]:hover{background:#20543f;box-shadow:0 4px 12px #254d3621}
+[data-action="create"]:active{background:#1b4936;box-shadow:0 1px 3px #254d3617}
+.stats{padding:24px 0;margin-bottom:26px;gap:0;background:linear-gradient(125deg,#fffffff0,#f8fcf8e6);border:1px solid #fff;border-radius:17px;box-shadow:0 6px 24px #2b513b0b,0 1px 3px #294b3508}
+.stats .stat{padding:0 26px;border-right:1px solid #dfe8e2}
+.stats .stat:last-child{border-right:0}
+.stats .stat label{font-size:11px;color:#536c5e}
+.stats .stat strong{font-size:34px;line-height:1.2;font-weight:600;letter-spacing:-1px;color:#244c38;margin:9px 0 6px}
+.stats .stat small{font-size:10px;color:#6a7e71}
+@media(max-width:1100px){.stats .stat{padding:0 20px}}
+@media(max-width:850px){.sidebar #nav{margin-top:19px}.stats .stat{padding:0 18px}}
+@media(max-width:550px){[data-action="create"]{min-height:40px;padding:0 13px;gap:6px;font-size:12px}.stats{padding:20px 0;gap:22px 0;border-radius:14px}.stats .stat{padding:0 19px}.stats .stat:nth-child(2){border-right:0}.stats .stat:nth-child(3){padding-left:19px}.stats .stat label{font-size:10px}.stats .stat strong{font-size:32px}.stats .stat small{font-size:9px}}
+@media(prefers-reduced-transparency:reduce),(prefers-contrast:more){.stats{background:#fff}}
+@media(prefers-contrast:more){.stats{border-color:#8da393}.stats .stat label,.stats .stat small{color:#405b4b}}
